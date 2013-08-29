@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>universe的blog</title>
+	<link href="{$BASE_URL}application/views/css/style.css" rel="stylesheet">
+	<style type="text/css" media="screen">
+		html { margin-top: 28px !important; }
+		* html body { margin-top: 28px !important; }
+		#titlediv,#authordiv,#contentdiv{
+			border-color: #DFDFDF;
+		    border-radius: 3px 3px 3px 3px;
+		    box-shadow: 0 1px 0 #FFFFFF inset;
+			margin-bottom: 10px;
+   			position: relative;
+		}
+	</style>
+	<script type="text/javascript" src="{$BASE_URL}application/views/js/ckeditor/ckeditor.js"></script>
+	</head>
+
+	<body class="home blog logged-in admin-bar no-customize-support custom-font-enabled single-author">
+		<div id="page" class="hfeed site">
+			<header id="masthead" class="site-header" role="banner">
+				<hgroup>
+					<h1 class="site-title"><a href="{$BASE_URL}" title="blog" rel="home">universe的博客</a></h1>
+					<h2 class="site-description">界面源于Wordpress</h2>
+				</hgroup>
+		
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<h3 class="menu-toggle">菜单</h3>
+					<a class="assistive-text" href="#content" title="跳至内容">跳至内容</a>
+					<div class="nav-menu">
+						<ul>
+							<li class="page_item page-item-2"><a href="{$BASE_URL}" title="首页">首页</a></li>
+							<li class="current_page_item"><a href="{$BASE_URL}index.php/main/add" title="写博客">写博客</a></li>
+							<li class="page_item page-item-3"><a href="{$BASE_URL}index.php/main/import" title="博客导入">博客导入</a></li>
+							<!--  
+							<li class="page_item page-item-3"><a href="{$BASE_URL}index.php/main/about" title="关于">关于</a></li>
+						-->
+						</ul>
+					</div>
+				</nav><!-- #site-navigation -->
+		
+			</header><!-- #masthead -->
+		
+			<div id="main" class="wrapper">
+				<div id="primary" class="site-content">
+					<div id="content" role="main">						
+						<form id="blog_form" class="form-horizontal" action="{$BASE_URL}index.php/main/edit?id={$item.id}" method="post">
+						     <div id="titlediv">
+						     	<label id="title-prompt-text" class="" for="title">标题</label>
+								<input id="title" type="text" autocomplete="off" value="{$item.title}" size="30" name="title">
+						     </div>
+						     <div id="authordiv">
+						     	<label id="author-prompt-text" class="" for="author">作者</label>
+								<input id="author" type="text" autocomplete="off" value="{$item.author}" size="30" name="author">
+						     </div>
+						     <div id="contentdiv">
+						     	
+								<textarea rows="10" cols="27" id="content" name="mycontent" >{$item.content}
+								</textarea>
+								<div>
+							            <script type="text/javascript">
+							                CKEDITOR.replace( 'mycontent',
+							                        {
+							
+							                	toolbar :
+							                        [
+							           //加粗     斜体，     下划线      穿过线      下标字        上标字
+							                           ['Bold','Italic','Underline','Strike','Subscript','Superscript'],
+							           // 数字列表          实体列表            减小缩进    增大缩进
+							                           ['NumberedList','BulletedList','-','Outdent','Indent'],
+							           //左对齐             居中对齐          右对齐          两端对齐
+							                           ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+							           //超链接  取消超链接 锚点
+							                           ['Link','Unlink','Anchor'],
+							           //图片    flash    表格       水平线            表情       特殊字符        分页符
+							                           ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+							           '/',
+							           // 样式       格式      字体    字体大小
+							                           ['Styles','Format','Font','FontSize'],
+							           //文本颜色     背景颜色
+							                           ['TextColor','BGColor'],
+							                        ],
+							                            uiColor : '#9AB8F3',
+							                            width:'500',
+							                            height:'300'
+							
+							                        });
+							            </script>
+						         </div>
+						     </div>
+						     <input id="publish" class="button button-primary button-large" type="submit" accesskey="p" value="发布" name="publish">
+						</form>
+					</div><!-- #content -->
+				 </div><!-- #primary -->
+		
+				</div><!-- #main .wrapper -->
+				<footer id="colophon" role="contentinfo">
+					<div class="site-info">
+						<a href="http://cn.wordpress.org/" title="优雅的个人发布平台">自豪地采用 WordPress</a>
+					</div><!-- .site-info -->
+				</footer><!-- #colophon -->
+		</div><!-- #page -->
+	
+	</body>
+</html>

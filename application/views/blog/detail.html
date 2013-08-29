@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>universe的blog</title>
+	<link href="{$BASE_URL}application/views/css/style.css" rel="stylesheet">
+	<link href="{$BASE_URL}application/views/css/other.css" rel="stylesheet">
+	<style type="text/css" media="screen">
+		html { margin-top: 28px !important; }
+		* html body { margin-top: 28px !important; }
+	</style>
+	</head>
+
+	<body class="home blog logged-in admin-bar no-customize-support custom-font-enabled single-author">
+		<div id="page" class="hfeed site">
+			<header id="masthead" class="site-header" role="banner">
+				<hgroup>
+					<h1 class="site-title"><a href="{$BASE_URL}" title="blog" rel="home">universe的博客</a></h1>
+					<h2 class="site-description">界面源于Wordpress</h2>
+				</hgroup>
+		
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<h3 class="menu-toggle">菜单</h3>
+					<a class="assistive-text" href="#content" title="跳至内容">跳至内容</a>
+					<div class="nav-menu">
+						<ul>
+							<li class="current_page_item"><a href="{$BASE_URL}" title="首页">首页</a></li>
+							<li class="page_item page-item-2"><a href="{$BASE_URL}index.php/main/add" title="写博客">写博客</a></li>
+							<li class="page_item page-item-3"><a href="{$BASE_URL}index.php/main/import" title="博客导入">博客导入</a></li>
+							<!--  
+							<li class="page_item page-item-3"><a href="{$BASE_URL}index.php/main/about">关于</a></li>
+						-->
+						</ul>
+					</div>
+				</nav><!-- #site-navigation -->
+		
+					</header><!-- #masthead -->
+		
+			<div id="main" class="wrapper">
+				<div id="primary" class="site-content">
+					<div id="content" role="main">					
+						<article id="post-4" class="post-4 post type-post status-publish format-standard hentry category-uncategorized">
+							<header class="entry-header">
+								<h1 class="entry-title">
+									<a href="{$BASE_URL}index.php/main/detail?id={$item.id}" title="链向 {$item.title} 的固定链接" rel="bookmark">{$item.title}</a>
+								</h1>
+								<br>
+								<h2>
+									<a href="{$item.src}" rel="bookmark">源地址：{$item.src}</a>
+								</h2>
+							</header><!-- .entry-header -->
+					
+							<div class="entry-content">
+								<p>{$item.content}</p>
+							</div><!-- .entry-content -->
+							<footer class="entry-meta">
+								本条目发布于 
+								<a href="{$BASE_URL}index.php/main/detail?id={$item.id}" title="上午 9:05" rel="bookmark">
+									<time class="entry-date" datetime="{$item.ctime}">{$item.ctime}</time>
+								</a>。
+								 <span class="by-author">作者是 
+									 <span class="author vcard">
+									 <a class="url fn n" href="http://localhost/wordpress/?author=1" title="查看所有由 admin 发布的文章" rel="author">{$item.author}</a>
+									 </span>。
+								 </span>			
+								 <span class="edit-link"><a class="post-edit-link" href="{$BASE_URL}index.php/main/edit?id={$item.id}" title="编辑文章">编辑</a></span>					
+								 </footer><!-- .entry-meta -->
+						</article>
+					</div><!-- #content -->
+				 </div><!-- #primary -->
+
+				</div><!-- #main .wrapper -->
+				<footer id="colophon" role="contentinfo">
+					<div class="site-info">
+									<a href="http://cn.wordpress.org/" title="优雅的个人发布平台">自豪地采用 WordPress</a>
+					</div><!-- .site-info -->
+				</footer><!-- #colophon -->
+		</div><!-- #page -->
+	
+	</body>
+</html>
